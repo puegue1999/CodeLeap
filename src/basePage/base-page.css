@@ -1,0 +1,8 @@
+.screen {
+    background-color: #DDDDDD;
+    height: 100Vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
