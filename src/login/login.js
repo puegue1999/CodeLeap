@@ -1,13 +1,15 @@
 import React, { useState }  from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import './login.css'
 
 function Login() {
-
     const [login, setLogin] = useState(null);
+    const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        alert(`The name you entered was: ${login}`)
+        navigate('/codeleap');
     }
 
     return (
