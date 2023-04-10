@@ -38,8 +38,8 @@ function Content (props) {
                 <text className='login-sub-titulo'>Content</text>
                 <input className='login-input' type="text" name="login" placeholder='Content here' onChange={(e) => setContent(e.target.value)}/>
             </div>
-            <div className='login-form-button'>
-                <input className='login-submit' type="submit" value="Enviar" disabled={!title || !content}/>
+            <div className='content-form-button'>
+                <input className='content-submit' type="submit" value="Enviar" disabled={!title || !content}/>
             </div>
         </ form>
     );

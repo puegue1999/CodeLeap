@@ -20,7 +20,7 @@ function MainScreen () {
         if(posts.length <= 0){
             getAllPosts(url);
         }
-    }, [url, posts]);
+    }, [posts, url]);
 
     return (
         <div className='screen-principal'>

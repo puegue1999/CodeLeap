@@ -9,7 +9,7 @@ function BasePage() {
     <div className='screen'>
         <Router>
             <Routes>
-                <Route path='/login' element={<Login />} />
+                <Route path='/' element={<Login />} />
                 <Route path=':user/codeleap' element={<MainScreen />} />
             </Routes>
         </Router>

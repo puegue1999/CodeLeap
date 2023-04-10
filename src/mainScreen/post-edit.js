@@ -7,49 +7,47 @@ function PostEdit (props) {
     const [content, setContent] = useState(props.post.content);
 
     const handleSubmit = async (event) => {
-        // const jsonCompleto = criarJson();
-        // const apiUrl = 'https://dev.codeleap.co.uk/careers/';
-        // console.log(jsonCompleto);
-        // try {
-        //     await axios.post(apiUrl, jsonCompleto);
-        // } catch (error) {
-        //     //previousStep();
-        // }
-        // event.preventDefault();
+        const jsonCompleto = criarJson();
+        const apiUrl = 'https://dev.codeleap.co.uk/careers/' + props.post.id + '/';
+        try {
+            await axios.patch(apiUrl, jsonCompleto);
+        } catch (error) {
+            //previousStep();
+        }
+        await event.preventDefault();
     }
 
-    // function criarJson() {
-    //     const contentJsonTexto = '{' +
-    //         '"username": "' + props.user + '",' +
-    //         '"title": "' + title + '",' +
-    //         '"content": "' + content + '"' +
-    //     '}';
-    //     return JSON.parse(contentJsonTexto);
-    // }
+    function criarJson() {
+        const contentJsonTexto = '{' +
+            '"title": "' + title + '",' +
+            '"content": "' + content + '"' +
+        '}';
+        return JSON.parse(contentJsonTexto);
+    }
 
     return (
         <div>
         {props.showModal &&
             <form className='modal' onSubmit={handleSubmit}>
-                <div>
-                    <text className='login-titulo'>Edit item</text>
+                <div className='edit-modal'>
+                    <text className='edit-titulo'>Edit item</text>
                     <div className='login-form-input'>
-                        <text className='login-sub-titulo'>Title</text>
+                        <text className='edit-sub-titulo'>Title</text>
                         <input
                             className='login-input'
                             type="text"
-                            name="login"
+                            name="title"
                             placeholder='Hello World'
                             onChange={(e) => setTitle(e.target.value)}
                             defaultValue={props.post.title}
                         />
                     </div>
                     <div className='login-form-input'>
-                        <text className='login-sub-titulo'>Content</text>
+                        <text className='edit-sub-titulo'>Content</text>
                         <input
                             className='login-input'
                             type="text"
-                            name="login"
+                            name="content"
                             placeholder='Content here'
                             onChange={(e) => setContent(e.target.value)}
                             defaultValue={props.post.content}

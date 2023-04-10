@@ -1,7 +1,6 @@
 .login-form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     background: #FFFFFF;
     border: 1px solid #CCCCCC;
     border-radius: 16px;
@@ -51,4 +50,16 @@
 .login-submit:disabled {
     background-color: gray;
     cursor: auto;
+}
+
+@media screen and (max-width: 700px) {
+    .login-form {
+        height: 25vh;
+        width: 100vw;
+    }
+
+    .login-submit {
+        height: 5vh;
+        width: 15vw;
+    }
 }

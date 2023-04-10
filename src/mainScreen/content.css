@@ -6,12 +6,12 @@
     padding: 3%;
 }
 
-.login-form-button {
+.content-form-button {
     display: flex;
     justify-content: flex-end;
 }
 
-.login-submit {
+.content-submit {
     background-color: #7695EC;
     border-radius: 8px;
     color: #FFFFFF;
@@ -21,7 +21,7 @@
     cursor: pointer;
 }
 
-.login-submit:disabled {
+.content-submit:disabled {
     background-color: gray;
     cursor: auto;
 }

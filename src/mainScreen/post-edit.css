@@ -10,3 +10,19 @@
     justify-content: center;
     align-items: center;
 }
+
+.edit-modal {
+    background: #FFFFFF;
+    border: 1px solid #999999;
+    border-radius: 16px;
+}
+
+.edit-titulo {
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.edit-sub-titulo {
+    font-weight: 400;
+    font-size: 16px;
+}

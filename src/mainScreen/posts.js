@@ -2,20 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import PostEdit from './post-edit';
+import PostDelete from './post-delete';
 import moment from 'moment';
 import './posts.css'
 
 function Posts (props) {
 
     const [diferencaTempo, setDiferencaTempo] = useState(null);
-    const [modalCard, setModalCard] = useState(false);
+    const [modalCardEdit, setModalCardEdit] = useState(false);
+    const [modalCardDelete, setModalCardDelete] = useState(false);
 
-    const eventoAbrirModal = () => {
-        setModalCard(true);
+    const eventoModalEdit = () => {
+        setModalCardEdit(!modalCardEdit);
     };
 
-    const eventoFecharModal = () => {
-        setModalCard(false);
+    const eventoModalDelete = () => {
+        setModalCardDelete(!modalCardDelete);
     };
 
     useEffect(() => {
@@ -31,10 +33,10 @@ function Posts (props) {
                     <text className='login-titulo'>{props.post.title}</text>
                 </div>
                 <div>
-                    <button className='post-button' onClick={eventoAbrirModal}>
+                    <button className='post-button' onClick={eventoModalEdit}>
                         <FontAwesomeIcon icon={faPenToSquare} />
                     </button>
-                    <button className='post-button'>
+                    <button className='post-button' onClick={eventoModalDelete}>
                         <FontAwesomeIcon icon={faTrashCan} />
                     </button>
                 </div>
@@ -47,8 +49,14 @@ function Posts (props) {
                 <text className='login-sub-titulo'>{props.post.content}</text>
             </div>
             <PostEdit 
-                showModal={modalCard}
-                eventoFecharModal={eventoFecharModal}
+                showModal={modalCardEdit}
+                eventoFecharModal={eventoModalEdit}
+                post={props.post}
+            />
+
+            <PostDelete
+                showModal={modalCardDelete}
+                eventoFecharModal={eventoModalDelete}
                 post={props.post}
             />
             
