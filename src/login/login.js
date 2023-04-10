@@ -9,7 +9,7 @@ function Login() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        navigate('/codeleap');
+        navigate('/' + login + '/codeleap');
     }
 
     return (

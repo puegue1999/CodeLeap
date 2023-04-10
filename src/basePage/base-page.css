@@ -1,8 +1,9 @@
 .screen {
     background-color: #DDDDDD;
-    height: 100Vh;
+    height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-y: auto;
 }

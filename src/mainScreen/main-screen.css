@@ -1,0 +1,24 @@
+.screen-principal {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 42%;
+}
+
+.title-principal {
+    display: flex;
+    align-items: center;
+    background-color: #7695EC;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 22px;
+    padding: 5%;
+}
+
+.blocos-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFFFFF;
+    padding: 5%;
+}

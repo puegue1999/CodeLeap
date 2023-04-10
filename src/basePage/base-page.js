@@ -5,18 +5,12 @@ import Login from '../login/login';
 import MainScreen from '../mainScreen/main-screen';
 
 function BasePage() {
-    // return (
-    //     <div className='screen'>
-    //         <Login />
-    //     </div>
-    // );
-
     return (
     <div className='screen'>
         <Router>
             <Routes>
-                <Route path='/' element={<Login />} />
-                <Route path='/codeleap' element={<MainScreen />} />
+                <Route path='/login' element={<Login />} />
+                <Route path=':user/codeleap' element={<MainScreen />} />
             </Routes>
         </Router>
     </div>
