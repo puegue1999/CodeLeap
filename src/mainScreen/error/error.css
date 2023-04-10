@@ -11,18 +11,30 @@
     align-items: center;
 }
 
-.edit-modal {
+.error-modal {
     background: #FFFFFF;
     border: 1px solid #999999;
     border-radius: 16px;
+    width: 20em;
+    height: 13em;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 1em;
 }
 
-.edit-titulo {
+.error-titulo {
     font-weight: 700;
     font-size: 22px;
 }
 
-.edit-sub-titulo {
-    font-weight: 400;
+.error-cancel {
+    border: 1px solid #000000;
+    border-radius: 8px;
+    height: 4vh;
+    width: 6vw;
+    cursor: pointer;
+    font-weight: 700;
     font-size: 16px;
+    margin: 0 1em;
 }

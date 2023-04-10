@@ -1,6 +1,7 @@
 import React  from 'react';
 import axios from 'axios';
-import './post-delete.css'
+import './post-delete.css';
+import Error from '../error/error';
 
 function PostDelete (props) {
 
@@ -10,25 +11,26 @@ function PostDelete (props) {
         try {
             await axios.delete(apiUrl, jsonCompleto);
         } catch (error) {
-            //previousStep();
+            <Error />
         }
+        window.location.reload(true);
         event.preventDefault();
     }
 
     function criarJson() {
-        const contentJsonTexto = '{}';
-        return JSON.parse(contentJsonTexto);
+        const contentJsonspano = '{}';
+        return JSON.parse(contentJsonspano);
     }
 
     return (
         <div>
         {props.showModal &&
             <form className='modal' onSubmit={handleSubmit}>
-                <div className='edit-modal'>
-                    <text className='edit-titulo'>Are you sure you want to delete this item?</text>
-                    <div className='login-form-button'>
-                        <input className='login-submit' type="button" value="Cancel" onClick={props.eventoFecharModal}/>
-                        <input className='login-submit' type="submit" value="Delete"/>
+                <div className='delete-modal'>
+                    <span className='delete-titulo'>Are you sure you want to delete this item?</span>
+                    <div className='delete-form-button'>
+                        <input className='button-cancel' type="button" value="Cancel" onClick={props.eventoFecharModal}/>
+                        <input className='button-delete' type="submit" value="Delete"/>
                     </div>
                 </div>
             </ form>

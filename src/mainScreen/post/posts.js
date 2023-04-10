@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import PostEdit from './post-edit';
@@ -8,7 +8,6 @@ import './posts.css'
 
 function Posts (props) {
 
-    const [diferencaTempo, setDiferencaTempo] = useState(null);
     const [modalCardEdit, setModalCardEdit] = useState(false);
     const [modalCardDelete, setModalCardDelete] = useState(false);
 
@@ -20,19 +19,13 @@ function Posts (props) {
         setModalCardDelete(!modalCardDelete);
     };
 
-    useEffect(() => {
-        const tempoAtual = moment();
-        const timePassed = moment(tempoAtual.diff(props.post.created_datetime)).format("HH:mm:ss");
-        setDiferencaTempo(timePassed);
-    }, [props.post, diferencaTempo]);
-
     return (
         <div className='post-box'>
             <div className='post-title'>
-                <div>
-                    <text className='login-titulo'>{props.post.title}</text>
+                <div className='post-right-max'>
+                    <span className='post-titulo'>{props.post.title}</span>
                 </div>
-                <div>
+                <div className='post-left-max'>
                     <button className='post-button' onClick={eventoModalEdit}>
                         <FontAwesomeIcon icon={faPenToSquare} />
                     </button>
@@ -42,11 +35,11 @@ function Posts (props) {
                 </div>
             </div>
             <div className='post-user'>
-                <text className='login-sub-titulo'>@{props.post.username}</text>
-                <text className='login-sub-titulo'>{diferencaTempo}</text>
+                <span className='post-sub-titulo post-right-max'>@{props.post.username}</span>
+                <span className='post-sub-titulo post-left-max'>{moment(props.post.created_datetime, "YYYYMMDD").fromNow()}</span>
             </div>
             <div className='post-content'>
-                <text className='login-sub-titulo'>{props.post.content}</text>
+                <span>{props.post.content}</span>
             </div>
             <PostEdit 
                 showModal={modalCardEdit}

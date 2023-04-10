@@ -1,0 +1,80 @@
+.modal {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 2000;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-modal {
+    background: #FFFFFF;
+    border: 1px solid #999999;
+    border-radius: 16px;
+    width: 20em;
+    height: 13em;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 1em;
+}
+
+.edit-titulo {
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.edit-sub-titulo {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.edit-form-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.edit-input {
+    border: 1px solid #777777;
+    border-radius: 8px;
+    padding: 3%;
+    max-width: 100%;
+}
+
+.edit-form-button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.edit-cancel {
+    border: 1px solid #000000;
+    border-radius: 8px;
+    height: 4vh;
+    width: 6vw;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
+    margin: 0 1em;
+}
+
+.edit-save {
+    background-color: #47B960;
+    border-radius: 8px;
+    color: #FFFFFF;
+    border: none;
+    height: 4vh;
+    width: 6vw;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.edit-save:disabled {
+    background-color: gray;
+    cursor: auto;
+}

@@ -14,10 +14,10 @@ function Login() {
 
     return (
         <form className='login-form' onSubmit={handleSubmit}>
-            <text className='login-titulo'>Welcome to CodeLeap network!</text>
+            <span className='login-titulo'>Welcome to CodeLeap network!</span>
             <div className='login-form-input'>
-                <text className='login-sub-titulo'>Please enter your name</text>
-                <input className='login-input' type="text" name="login" placeholder='John Dow' onChange={(e) => setLogin(e.target.value)}/>
+                <span className='login-sub-titulo'>Please enter your name</span>
+                <input className='login-input' type="span" name="login" placeholder='John Dow' onChange={(e) => setLogin(e.target.value)}/>
             </div>
             <div className='login-form-button'>
                 <input className='login-submit' type="submit" value="Enviar" disabled={!login}/>

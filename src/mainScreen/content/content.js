@@ -9,34 +9,32 @@ function Content (props) {
     const handleSubmit = async (event) => {
         const jsonCompleto = criarJson();
         const apiUrl = 'https://dev.codeleap.co.uk/careers/';
-        console.log(jsonCompleto);
         try {
             await axios.post(apiUrl, jsonCompleto);
         } catch (error) {
-            //previousStep();
+            alert("Algo deu errado");
         }
-        event.preventDefault();
     }
 
     function criarJson() {
-        const contentJsonTexto = '{' +
+        const contentJsonspano = '{' +
             '"username": "' + props.user + '",' +
             '"title": "' + title + '",' +
             '"content": "' + content + '"' +
         '}';
-        return JSON.parse(contentJsonTexto);
+        return JSON.parse(contentJsonspano);
     }
 
     return (
         <form className='box-content' onSubmit={handleSubmit}>
-            <text className='login-titulo'>What's in your mind?</text>
-            <div className='login-form-input'>
-                <text className='login-sub-titulo'>Title</text>
-                <input className='login-input' type="text" name="login" placeholder='Hello World' onChange={(e) => setTitle(e.target.value)}/>
+            <span className='content-titulo'>What's in your mind?</span>
+            <div className='content-form-input'>
+                <span className='content-sub-titulo'>Title</span>
+                <input className='content-input' type="span" name="title" placeholder='Hello World' onChange={(e) => setTitle(e.target.value)}/>
             </div>
-            <div className='login-form-input'>
-                <text className='login-sub-titulo'>Content</text>
-                <input className='login-input' type="text" name="login" placeholder='Content here' onChange={(e) => setContent(e.target.value)}/>
+            <div className='content-form-input'>
+                <span className='content-sub-titulo'>Content</span>
+                <input className='content-input' type="span" name="content" placeholder='Content here' onChange={(e) => setContent(e.target.value)}/>
             </div>
             <div className='content-form-button'>
                 <input className='content-submit' type="submit" value="Enviar" disabled={!title || !content}/>

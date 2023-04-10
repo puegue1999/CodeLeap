@@ -9,10 +9,19 @@
     display: flex;
     align-items: center;
     background-color: #7695EC;
+    justify-content: space-between;
     color: #FFFFFF;
     font-weight: 700;
     font-size: 22px;
     padding: 5%;
+}
+
+.loggout {
+    background-color: #7695EC;
+    color: #FF5151;
+    border: none;
+    font-size: large;
+    cursor: pointer;
 }
 
 .blocos-principal {
@@ -23,8 +32,34 @@
     padding: 5%;
 }
 
+.blocos-botoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #FFFFFF;
+}
+
+.blocos-arrow {
+    background-color: #7695EC;
+    border-radius: 90px;
+    color: #FFFFFF;
+    border: none;
+    height: 2em;
+    width: 2em;
+    cursor: pointer;
+}
+
+.blocos-arrow:disabled {
+    background-color: gray;
+    cursor: auto;
+}
+
 @media screen and (max-width: 700px) {
     .screen-principal {
         width: 100vw;
+    }
+
+    .content-submit {
+        width: 15vw;
     }
 }
